@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="lara">What is Laracarte ?</h2>
+    <h2 class="lara">What is {{config('app.name')}} ?</h2>
     <p>Laracarte is a clone app of <a href="https://laramap.com" target="_blank">Laramap.com</a>.</p>
     <div class="row">
         <div class="col-md-6">
@@ -19,12 +19,12 @@
     <hr>
 
     <h2 class="lara">What is Laramap ?</h2>
-    <p>Laramap is the website by which laracaste is made .</p>
+    <p>Laramap is the website by which {{config('app.name')}} is made .</p>
     <p>More info <a href="https://laramap.com" target="_blank">here</a>.</p>
 
     <hr>
 
-    <h2 class="lara">Which tools and services are used in Laracasts ?</h2>
+    <h2 class="lara">Which tools and services are used in {{config('app.name')}} ?</h2>
     <p>Basically it is built in Laravel and Bootstrap !</p>
     <ul>
         <li>Laravel</li>
