@@ -30,6 +30,14 @@
 </head>
 <body>
     @yield('content')
+    <div class="container">
+
+        @if(session()->has('notification.message'))
+        <div class="alert alert-{{ session()->get('notification.type') }}">
+            {{ session('notification.message') }}
+        </div>
+        @endif
+    </div>
 
     @include('layouts/partials/_nav')
 
