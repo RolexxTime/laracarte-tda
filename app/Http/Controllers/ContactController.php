@@ -20,7 +20,7 @@ class ContactController extends Controller
     public function store(ContactFormRequest $request)
     {
         $maillable = new ContactMessageCreated($request->name, $request->email, $request->message);
-        Mail::to('dindjipierre77@gmail.com')->send($maillable);
+        Mail::to(config('laracarte.admin_support_email'))->send($maillable);
         session()->flash('message', 'Mail envoye avec success !');
         return redirect()->route('root_path');
     }

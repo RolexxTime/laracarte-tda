@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
         <h2 class="lara">Get in Touch</h2>
         <p class="text-muted">If you having trouble with this service, please 
-            <a href="mailto:dindjipierre77@gmail.com">ask for help</a>.
+            <a href="mailto:{{ config('laracarte.admin_support_email') }}">ask for help</a>.
         </p>
 
         <form action="{{ route('contact_path') }}" method="POST">
