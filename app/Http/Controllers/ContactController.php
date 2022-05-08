@@ -20,6 +20,8 @@ class ContactController extends Controller
 
     public function store(ContactFormRequest $request)
     {
+        sleep(3);
+
         $message = new Message;
         $message -> name = $request -> name;
         $message -> email = $request -> email;

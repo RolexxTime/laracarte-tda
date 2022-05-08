@@ -20,6 +20,7 @@
     <style>
         .lara{
             padding-top: 70px;
+            text-align: center;
             
         }
         footer{
@@ -31,12 +32,14 @@
 <body>
     @yield('content')
     <div class="container">
-
+        <div class="lara">
         @if(session()->has('notification.message'))
         <div class="alert alert-{{ session()->get('notification.type') }}">
             {{ session('notification.message') }}
         </div>
         @endif
+        </div>
+        
     </div>
 
     @include('layouts/partials/_nav')
