@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Models\Message;
 use Redirect;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactFormRequest;
@@ -19,7 +20,13 @@ class ContactController extends Controller
 
     public function store(ContactFormRequest $request)
     {
-        $maillable = new ContactMessageCreated($request->name, $request->email, $request->message);
+        $message = new Message;
+        $message -> name = $request -> name;
+        $message -> email = $request -> email;
+        $message -> message = $request -> message;
+        $message ->save();
+
+        $maillable = new ContactMessageCreated($message);
         Mail::to(config('laracarte.admin_support_email'))->send($maillable);
         session()->flash('message', 'Mail envoye avec success !');
         return redirect()->route('root_path');
