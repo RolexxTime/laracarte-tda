@@ -6,16 +6,10 @@ if(! function_exists('page_title')){
 
         $base_title = config('app.name'). ' - Lists of Artisans';
 
-        if($title === ''){
-
-            return $base_title;
-
-        }else{
-
-            return $title. ' | ' . $base_title;
+        return empty($title) ? $base_title : $title. ' | ' . $base_title;
 
         }
-    }
+    
 }
 
 
